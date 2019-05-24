@@ -139,6 +139,17 @@ RSpec.describe Profile, type: :model do
       expect(@existing_profile.latest_VLDL).to eq(@latest_VLDL)
     end
   end
+  context 'Associated Totals Cholesterol' do
+    before do
+      @existing_profile = FactoryBot.create :profile, email: 'joao@example.org'
+      @latest_total = FactoryBot.create :total, date: Time.now, profile: @existing_profile
+      @other_total = FactoryBot.create :total, date: 1.day.ago, profile: @existing_profile
+    end
+
+    it 'Should return the latest Totals Cholesterol of a profile' do
+      expect(@existing_profile.latest_total).to eq(@latest_total)
+    end
+  end
 #-----------------------------Jefferson-----------------
   describe 'BMI' do
     context 'With valid height and weight' do
