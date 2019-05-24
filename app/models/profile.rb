@@ -36,6 +36,14 @@ class Profile < ApplicationRecord
   def latest_height
     heights.order(:date).reverse_order.take
   end
+  
+  
+  
+  
+  
+  def latest_HDL
+    hdls.order(:date).reverse_order.take
+  end
 
   def bmi
     if latest_height && latest_weight
