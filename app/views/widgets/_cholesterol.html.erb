@@ -1,0 +1,86 @@
+<div id="widget_lastest_height" class="col-md-3">
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+
+            <% if latest_HDL %>
+            
+                <h3 class="card-title">
+                    HDL-Cholesterol:
+                </h3>
+                <h2 class=""><%= latest_HDL.value %> m</h2>
+            
+            <% else %>
+            
+                <small>You don't have any HDL-Cholesterol registered</small> 
+            
+            <% end %>
+
+
+            <% if latest_NON_HDL %>
+            
+                <h3 class="card-title">
+                    NON-HDL-Cholesterol:
+                </h3>
+                <h2 class=""><%= latest_NON_HDL.value %> m</h2>
+            
+            <% else %>
+            
+                <small>You don't have any NON-HDL-Cholesterol registered</small> 
+            
+            <% end %>
+            
+
+            <% if latest_LDL %>
+            
+                <h3 class="card-title">
+                    LDL-Cholesterol:
+                </h3>
+                <h2 class=""><%= latest_LDL.value %> m</h2>
+            
+            <% else %>
+            
+                <small>You don't have any LDL-Cholesterol registered</small> 
+            
+            <% end %>
+            
+
+            <% if latest_VLDL %>
+            
+                <h3 class="card-title">
+                    VLDL-Cholesterol:
+                </h3>
+                <h2 class=""><%= latest_VLDL.value %> m</h2>
+            
+            <% else %>
+            
+                <small>You don't have any VLDL-Cholesterol registered</small> 
+            
+            <% end %>
+            
+
+            <% if latest_total %>
+            
+                <h3 class="card-title">
+                    Total-Cholesterol:
+                </h3>
+                <h2 class=""><%= latest_total.value %> m</h2>
+            
+            <% else %>
+            
+                <small>You don't have any Total-Cholesterol registered</small> 
+            
+            <% end %>
+            
+            
+        </div>
+        <% if latest_HDL %>
+        
+        <div class="card-footer">
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Registered: <%= latest_HDL.date.to_date() %></small>
+            </div>
+        </div>
+        
+        <% end %>
+    </div>
+</div>
