@@ -48,6 +48,10 @@ class Profile < ApplicationRecord
   def latest_NON_HDL
     non_hdls.order(:date).reverse_order.take
   end
+  
+  def latest_LDL
+    ldls.order(:date).reverse_order.take
+  end
 
   def bmi
     if latest_height && latest_weight
