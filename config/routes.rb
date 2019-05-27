@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :profiles, param: :email, email: %r{[^\/]+} do
     resources :weights
-    resources :weight_goals
+    resource :weight_goal
     resources :heights
     resources :pressures
     resources :contacts

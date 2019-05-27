@@ -5,7 +5,7 @@ class WeightGoalsController < ApplicationController
         before_action :block_crossprofile_access
         before_action :recover_profile
       
-        def index
+        def show
           # @weight_goal = @profile.weight_goal
           @weight_goal = WeightGoal.new
         end
