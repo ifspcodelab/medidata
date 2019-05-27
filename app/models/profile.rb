@@ -3,6 +3,8 @@
 class Profile < ApplicationRecord
   belongs_to :user
 
+  has_one :weight_goal
+
   has_many :weights
   has_many :heights
   has_many :medications

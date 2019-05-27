@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_135951) do
+ActiveRecord::Schema.define(version: 2019_05_27_184945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -229,6 +229,15 @@ ActiveRecord::Schema.define(version: 2018_11_28_135951) do
     t.index ["profile_id"], name: "index_vldls_on_profile_id"
   end
 
+  create_table "weight_goals", force: :cascade do |t|
+    t.decimal "value"
+    t.date "date"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_weight_goals_on_profile_id"
+  end
+
   create_table "weights", force: :cascade do |t|
     t.decimal "value"
     t.date "date"
@@ -255,5 +264,6 @@ ActiveRecord::Schema.define(version: 2018_11_28_135951) do
   add_foreign_key "reactions", "profiles"
   add_foreign_key "totals", "profiles"
   add_foreign_key "vldls", "profiles"
+  add_foreign_key "weight_goals", "profiles"
   add_foreign_key "weights", "profiles"
 end

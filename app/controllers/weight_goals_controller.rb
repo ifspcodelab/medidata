@@ -1,4 +1,4 @@
-class WeightGoalController < ApplicationController
+class WeightGoalsController < ApplicationController
     layout 'internal'
         
         before_action :authenticate_user!
@@ -6,7 +6,8 @@ class WeightGoalController < ApplicationController
         before_action :recover_profile
       
         def index
-          @weight_goals = @profile.weight_goals
+          # @weight_goal = @profile.weight_goal
+          @weight_goal = WeightGoal.new
         end
       
         def new; end
