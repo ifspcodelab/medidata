@@ -15,9 +15,7 @@ class ProfilesController < ApplicationController
 
   def show; end
 
-  def edit
-    @profile = Profile.find_by(email: params[:email])
-  end
+  def edit;end
 
   def create
     @profile = Profile.new(profile_create_params)
@@ -33,8 +31,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = Profile.find_by(email: params[:email])
-
     if @profile.update(profile_update_params)
       flash[:success] = 'O perfil foi modificado com sucesso'
     end
