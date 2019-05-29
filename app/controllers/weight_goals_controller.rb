@@ -23,7 +23,7 @@ class WeightGoalsController < ApplicationController
       
           if @weight_goal.save
             flash[:success] = 'Weight Goal registered sucessfully'
-            redirect_to profile_weight_goals_path(profile_email: @profile.email)
+            redirect_to profile_weight_goal_path(profile_email: @profile.email)
           else
             render 'new'
           end
@@ -34,7 +34,7 @@ class WeightGoalsController < ApplicationController
       
           if @weight_goal.update(weight_goal_params)
             flash[:success] = 'Weight Goal updated sucessfully'
-            redirect_to profile_weight_goals_path(profile_email: @weight.profile.email)
+            redirect_to profile_weight_goal_path(profile_email: @weight.profile.email)
           else
             render 'edit'
           end
@@ -47,7 +47,7 @@ class WeightGoalsController < ApplicationController
       
           @weight_goal.destroy
       
-          redirect_to profile_weight_goals_path(profile_email: profile_email)
+          redirect_to profile_weight_goal_path(profile_email: profile_email)
         end
       
         private

@@ -28,7 +28,27 @@
             method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %> 
         </td>
     </tr>
+    
   <% end %>
   
+</table>
+
+<table class="table table-striped">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Value</th>
+    <th scope="col">Date</th>
+    <th scope="col"></th>
+  </tr>
+    <tr>
+      <td><%= @profile.weight_goal.id %></td>
+      <td><%= @profile.weight_goal.value %></td>
+      <td><%= @profile.weight_goal.date %></td>
+      <td>
+        <%= link_to "Edit", edit_profile_weight_goal_path(profile_email: @profile.email, id: @profile.weight_goal.id), class: "btn btn-sm btn-primary" %> |  
+        <%= link_to "Delete", profile_weight_goal_path(profile_email: @profile.email, id: @profile.weight_goal.id), 
+            method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %> 
+        </td>
+    </tr>
 </table>
 <%= link_to 'Add Weight', new_profile_weight_path(profile_email: @profile.email),  class: "btn btn-sm btn-success"  %>

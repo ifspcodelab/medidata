@@ -9,7 +9,8 @@
 <% end %>
 
 <div class="row">
-  <%= render :partial => "weights/latest", :locals => { :latest_weight => @profile.latest_weight } %>
+  <%= render :partial => "weights/latest", :locals => { :latest_weight => @profile.latest_weight,
+                                                        :latest_weight_goal => @profile.weight_goal} %>
   <%= render :partial => "heights/latest", :locals => { :latest_height => @profile.latest_height } %>
   <%= render :partial => "widgets/bmi", :locals => { :bmi => @profile.bmi } %>
 </div>
