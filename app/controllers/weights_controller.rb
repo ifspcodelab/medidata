@@ -12,6 +12,7 @@ class WeightsController < ApplicationController
   def new; end
 
   def edit
+    
     @weight = Weight.find(params[:id])
   end
 

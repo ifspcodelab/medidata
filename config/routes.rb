@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'welcome/index'
+  get 'weights/index'
 
   resources :profiles, param: :email, email: %r{[^\/]+} do
     resources :weights
