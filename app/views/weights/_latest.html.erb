@@ -1,26 +1,36 @@
-<div id="widget_lastest_weight" class="col-md-3">
+<div id="widget_lastest_weight" class="col-4">
     <div class="card mb-4 shadow-sm">
         <div class="card-body">
             <% if latest_weight %>
+                <div class="row">
+                   <div class="col-6">
+                        <h3 class="card-title">
+                            Weight:
+                        </h3>
+                        <h2 class=""><%= latest_weight.value %> kg</h2>
+                    </div>
+
+                    <% if latest_weight_goal %>  
+                        <div class="col-6">
+                            <h3 class="card-title">
+                            Weight Goal:
+                            </h3>
+
+                            <h2 class=""><%= @profile.weight_goal.value %> kg</h2>
+                        </div>
+                             
+                    <% else %>
             
-            <h3 class="card-title">
-                Weight:
-            </h3>
-            <h2 class=""><%= latest_weight.value %> kg</h2>
-            
-            <% if latest_weight_goal %>
-            <h3 class="card-title">
-                Weight Goal:
-            </h3>
-            <h2 class=""><%= latest_weight_goal.value %> kg</h2>
+                    <small>You don't have any weight goal registered</small> 
+
+                    <% end %>
             
             <% else %>
             
             <small>You don't have any weight registered</small> 
-            <% end %>
-            
             
             <% end %>
+        </div>
         </div>
         <% if latest_weight %>
         
