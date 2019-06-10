@@ -14,5 +14,5 @@ Then('I should see a Cholesterol-hdl widget with the most recent register') do
   widget = find('#widget_latest_cholesterol')
 
   expect(widget).to have_content("HDL: #{@expected_HDL.value} mg/dl")
-  #expect(widget).to have_content("Registered: #{@expected_HDL.date.to_date()}")
+  expect(widget).to have_content("Registered: #{@expected_HDL.date.to_date()}")
 end

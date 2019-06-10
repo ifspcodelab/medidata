@@ -14,5 +14,5 @@ Given('I have at least one Cholesterol-ldl registered') do
     widget = find('#widget_latest_cholesterol')
   
     expect(widget).to have_content("LDL: #{@expected_ldl.value} mg/dl")
-    #expect(widget).to have_content("Registered: #{@expected_hdl.date.to_date()}")
+    expect(widget).to have_content("Registered: #{@expected_ldl.date.to_date()}")
   end
