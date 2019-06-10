@@ -13,6 +13,6 @@ Given('I have at least one Cholesterol-non-hdl registered') do
   Then('I should see a Colesterol-non-hdl widget with the most recent register') do
     widget = find('#widget_latest_cholesterol')
   
-    expect(widget).to have_content("Cholesterol-NON-HDL: #{@expected_NON_HDL.value} mg/dl")
+    expect(widget).to have_content("NON-HDL: #{@expected_NON_HDL.value} mg/dl")
     #expect(widget).to have_content("Registered: #{@expected_HDL.date.to_date()}")
   end
