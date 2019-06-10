@@ -2,11 +2,12 @@
     <div class="card mb-4 shadow-sm">
         <div class="card-body">
 
+            <h3 class="card-title">
+                Cholesterol Values:
+            </h3>
+
             <% if latest_HDL %>
             
-                <h3 class="card-title">
-                    HDL-Cholesterol:
-                </h3>
                 <h2 class="">HDL: <%= latest_HDL.value %> mg/dl</h2>
             
             <% else %>
@@ -14,13 +15,9 @@
                 <small>You don't have any HDL-Cholesterol registered</small> 
             
             <% end %>
-
-
+        
             <% if latest_NON_HDL %>
             
-                <h3 class="card-title">
-                    NON-HDL-Cholesterol:
-                </h3>
                 <h2 class="">NON-HDL: <%= latest_NON_HDL.value %> mg/dl</h2>
             
             <% else %>
@@ -29,12 +26,8 @@
             
             <% end %>
             
-
             <% if latest_LDL %>
             
-                <h3 class="card-title">
-                    LDL-Cholesterol:
-                </h3>
                 <h2 class="">LDL: <%= latest_LDL.value %> mg/dl</h2>
             
             <% else %>
@@ -42,13 +35,9 @@
                 <small>You don't have any LDL-Cholesterol registered</small> 
             
             <% end %>
-            
 
             <% if latest_VLDL %>
             
-                <h3 class="card-title">
-                    VLDL-Cholesterol:
-                </h3>
                 <h2 class="">VLDL: <%= latest_VLDL.value %> mg/dl</h2>
             
             <% else %>
@@ -57,12 +46,8 @@
             
             <% end %>
             
-
             <% if latest_total %>
             
-                <h3 class="card-title">
-                    Total-Cholesterol:
-                </h3>
                 <h2 class=""><%= latest_total.value %> mg/dl</h2>
             
             <% else %>
@@ -70,7 +55,6 @@
                 <small>You don't have any Total-Cholesterol registered</small> 
             
             <% end %>
-            
             
         </div>
         <% if latest_HDL %>

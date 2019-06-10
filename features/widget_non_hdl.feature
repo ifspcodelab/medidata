@@ -10,4 +10,4 @@ Background:
 Scenario: I should be able to see my latest cholesterol-non-hdl registered on my main profile page
     Given I have at least one Cholesterol-non-hdl registered
     And I am on My profile page
-    Then I should see a Colesterol-non-hdl widget with the most recent register
+    Then I should see a Cholesterol-non-hdl widget with the most recent register

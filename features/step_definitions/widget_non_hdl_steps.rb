@@ -10,7 +10,7 @@ Given('I have at least one Cholesterol-non-hdl registered') do
     expect(@my_profile.non_hdls.size).to be(2)
   end
   
-  Then('I should see a Colesterol-non-hdl widget with the most recent register') do
+  Then('I should see a Cholesterol-non-hdl widget with the most recent register') do
     widget = find('#widget_latest_cholesterol')
   
     expect(widget).to have_content("NON-HDL: #{@expected_NON_HDL.value} mg/dl")
