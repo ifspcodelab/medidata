@@ -11,4 +11,4 @@ Background:
 Scenario: I should be able to see my latest cholesterol-hdl register on my main profile page
     Given I have at least one Cholesterol-hdl registered
     And I am on My profile page
-    Then I should see a Colesterol-hdl widget with the most recent register
+    Then I should see a Cholesterol-hdl widget with the most recent register
