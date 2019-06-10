@@ -9,7 +9,7 @@
             <% if latest_HDL %>
             
                 <h2 class="">HDL: <%= latest_HDL.value %> mg/dl</h2>
-            
+                <small class="text-muted border d-flex justify-content-between">Registered: <%= latest_HDL.date.to_date() %></small>
             <% else %>
             
                 <small>You don't have any HDL-Cholesterol registered</small> 
@@ -19,7 +19,7 @@
             <% if latest_NON_HDL %>
             
                 <h2 class="">NON-HDL: <%= latest_NON_HDL.value %> mg/dl</h2>
-            
+                <small class="text-muted border d-flex justify-content-between">Registered: <%= latest_NON_HDL.date.to_date() %></small>
             <% else %>
             
                 <small>You don't have any NON-HDL-Cholesterol registered</small> 
@@ -29,7 +29,7 @@
             <% if latest_LDL %>
             
                 <h2 class="">LDL: <%= latest_LDL.value %> mg/dl</h2>
-            
+                <small class="text-muted border d-flex justify-content-between">Registered: <%= latest_LDL.date.to_date() %></small>
             <% else %>
             
                 <small>You don't have any LDL-Cholesterol registered</small> 
@@ -39,7 +39,7 @@
             <% if latest_VLDL %>
             
                 <h2 class="">VLDL: <%= latest_VLDL.value %> mg/dl</h2>
-            
+                <small class="text-muted border d-flex justify-content-between">Registered: <%= latest_VLDL.date.to_date() %></small>
             <% else %>
             
                 <small>You don't have any VLDL-Cholesterol registered</small> 
@@ -49,7 +49,7 @@
             <% if latest_total %>
             
                 <h2 class=""><%= latest_total.value %> mg/dl</h2>
-            
+                <small class="text-muted border d-flex justify-content-between">Registered: <%= latest_total.date.to_date() %></small>
             <% else %>
             
                 <small>You don't have any Total-Cholesterol registered</small> 
@@ -57,14 +57,5 @@
             <% end %>
             
         </div>
-        <% if latest_HDL %>
-        
-        <div class="card-footer">
-            <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">Registered: <%= latest_HDL.date.to_date() %></small>
-            </div>
-        </div>
-        
-        <% end %>
     </div>
 </div>
