@@ -1,0 +1,15 @@
+Given('I have at least one Glucose registered') do
+    @expected_glucose = FactoryBot.create :glucose_measure, :date => Time.now, 
+                                                            :profile => @my_profile,
+                                                            :value => 1.5
+    @another_glucose = FactoryBot.create :glucose_measure, :date => 1.day.ago,
+                                                            :profile => @my_profile,
+                                                            :value => 2.0
+    expect(@my_profile.glucose_measures.size).to be(2)
+end
+
+Then('I should see a Glucose widget with the most recent register') do
+    widget = find('#widget_latest_glucose')
+    expect(widget).to have_content("#{@expected_glucose.value} kg")
+    expect(widget).to have_content("Registered: #{@expected_glucose.date.to_date()}")
+end
