@@ -9,7 +9,7 @@ Given('I have at least one Glucose registered') do
 end
 
 Then('I should see a Glucose widget with the most recent register') do
-    widget = find('#widget_latest_glucose')
+    widget = find('#widget_lastest_glucose')
     expect(widget).to have_content("#{@expected_glucose.value} kg")
     expect(widget).to have_content("Registered: #{@expected_glucose.date.to_date()}")
 end
