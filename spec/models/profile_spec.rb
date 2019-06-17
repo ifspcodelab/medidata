@@ -67,31 +67,43 @@ RSpec.describe Profile, type: :model do
       expect(profile).to_not be_valid
     end
   end
+  describe 'Associated values with profile' do 
+    context 'Associated Weights' do
+      before do
+        @existing_profile = FactoryBot.create :profile, email: 'joao@example.org'
+        @latest_weight = FactoryBot.create :weight, date: Time.now, profile: @existing_profile
+        @other_weight = FactoryBot.create :weight, date: 1.day.ago, profile: @existing_profile
+      end
 
-  context 'Associated Weights' do
-    before do
-      @existing_profile = FactoryBot.create :profile, email: 'joao@example.org'
-      @latest_weight = FactoryBot.create :weight, date: Time.now, profile: @existing_profile
-      @other_weight = FactoryBot.create :weight, date: 1.day.ago, profile: @existing_profile
+      it 'Should return the latest weight of a profile' do
+        expect(@existing_profile.latest_weight).to eq(@latest_weight)
+      end
     end
 
-    it 'Should return the latest weight of a profile' do
-      expect(@existing_profile.latest_weight).to eq(@latest_weight)
+    context 'Associated Heights' do
+      before do
+        @existing_profile = FactoryBot.create :profile, email: 'joao@example.org'
+        @latest_height = FactoryBot.create :height, date: Time.now, profile: @existing_profile
+        @other_height = FactoryBot.create :height, date: 1.day.ago, profile: @existing_profile
+      end
+
+      it 'Should return the latest height of a profile' do
+        expect(@existing_profile.latest_height).to eq(@latest_height)
+      end
     end
+    context 'Associated Glucose' do
+      before do
+        @existing_profile = FactoryBot.create :profile, email: 'joao@example.org'
+        @latest_glucose = FactoryBot.create :glucose_measure, date: Time.now  ,profile: @existing_profile
+        @other_glucose = FactoryBot.create :glucose_measure, date: 1.day.ago ,profile: @existing_profile
+      end
+      it 'Should return the latest glucose mensure of a profile' do
+        expect(@existing_profile.latest_glucose).to eq(@latest_glucose)
+      end  
+
+    end 
   end
 
-  context 'Associated Heights' do
-    before do
-      @existing_profile = FactoryBot.create :profile, email: 'joao@example.org'
-      @latest_height = FactoryBot.create :height, date: Time.now, profile: @existing_profile
-      @other_height = FactoryBot.create :height, date: 1.day.ago, profile: @existing_profile
-    end
-
-    it 'Should return the latest height of a profile' do
-      expect(@existing_profile.latest_height).to eq(@latest_height)
-    end
-  end
-#-----------------------------Jefferson-----------------
   context 'Associated HDL Cholesterol' do
     before do
       @existing_profile = FactoryBot.create :profile, email: 'joao@example.org'
@@ -150,7 +162,7 @@ RSpec.describe Profile, type: :model do
       expect(@existing_profile.latest_total).to eq(@latest_total)
     end
   end
-#-----------------------------Jefferson-----------------
+
   describe 'BMI' do
     context 'With valid height and weight' do
       before do
