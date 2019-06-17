@@ -1,5 +1,6 @@
 require 'rails_helper'
+require 'date'
 
-RSpec.describe WeightGoalController, type: :controller do
+RSpec.describe WeightGoalsController, type: :controller do
 
 end
