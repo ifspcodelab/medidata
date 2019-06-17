@@ -10,7 +10,7 @@ Scenario: I should be able to see my latest glucose register on my main profile 
     Then I should see a Glucose widget with the most recent register
 
 Scenario: I should see "You don't have any glucose registered"
-    Given I have not added any Glucose meansure
-    And I am on My Profile page
-    Then I should see a Glucose the phrase "You don't have any glucose registered"
+    Given I have not added any Glucose measure
+    And I am on My profile page
+    Then I should see a Glucose widget the phrase "You don't have any glucose registered"
     
