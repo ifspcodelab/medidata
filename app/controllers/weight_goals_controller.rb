@@ -36,7 +36,7 @@ class WeightGoalsController < ApplicationController
         end
       
         def destroy
-          @weight_goal = WeightGoal.find(params[:id])
+          @weight_goal = @profile.weight_goal
       
           profile_email = @weight_goal.profile.email
       
